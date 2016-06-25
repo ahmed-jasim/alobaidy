@@ -1,105 +1,93 @@
-local function run(msg, matches)
-  if is_chat_msg(msg) then
-    local text = [[‌✅Commands to lock|unlock
-💭/close|open link
-💭/close|open member
-💭/close|open name
-💭/close|open bot
-💭/close|open photo
-💭/close|open sticker
-💭/close|open file 
-💭/close|open audio
 
-➕
-✅Commands for control member
-💭/kick : by <reply|id|username>
-💭/ban : by <reply|id|username>
-💭/unban : by <reply|id|username>
-💭/kickme
+do
 
-➕
-✅Group control 
-💭/rules
-💭/setrules <write rules>
-💭/about
-💭/setabout <write about>
-💭/setphoto : then send photo
-💭/setname <write name>
-💭/id
-💭/id chat
-💭/group settings 
-💭/getlink : send link in your pv
-💭/relink <idchat> : change link group and send new link your pv
-💭/modlist
-💭/help
+function run(msg, matches)
+  return [[💠help  For Ahmed.Dev
+  ❇️ Group Promote  commands
+🌀 setadmin : رفع ادمن في المجموعة
+🌀 deadmin : حذف ادمن في المجوعة
+🌀 promote : رفع ادمن
+🌀 demote : حذف ادمن
+🌀 spromote : اضافة مدير
+🌀 modlist : لاظهار ادمنية المجموعة
+🌀 admins : اضهار اداريين المجموعه
+🌀 setusername : لوضع معرف للكروب
+🔵〰🔵〰🔵〰🔵〰🔵〰🔵
+💠 Commands for control membee
+🌀 kick : لطرد العضو
+🌀 ban : لحظر العظر
+🌀 unban : فتح الخظر عن العضو
+🌀 kickme : للخروج من المجموعة
+🌀 silent : لتفعيل الصمت على احد الاعضاء
+🌀 clean mutelist: الغاء الصمت على العضو
+🌀 block : لحضر الكلمة
+🌀 words : لعرض الكلمات المحظورة
+🌀 unblock : لفتح حضر الكلمة
+🌀 me : لمعرفه موقعك في المجموعة
+🔵〰🔵〰🔵〰🔵〰🔵〰🔵
+💠 Commands for control
+🌀 rules : لاضهار القوانين
+🌀 setrules : لاظافة القوانين
+🌀 setphoto : لوضع صورة
+🌀 setname : لوضع اسم 
+🌀 about : لاضهار الوصف
+🌀 setabout : لاظافة الوصف
+🌀 id : لاظهار الايدي
+🌀 in : لاظهار ايدي الشخص بلرد
+🌀 settings : اضهار اعدادات المجموعة
+🌀 info : اضهار المعلومات الخاصه بك
+🌀 info group : اضهار المعلومات الخاصه بالمجموعة
+🌀 s group : اضهار اعادادات المجموعة الثانية
+🌀 newlink : لصنع الرابط او تغيرة
+🌀 linkpv :  للحصول على الرابط خاص في 
+🔵〰🔵〰🔵〰🔵〰🔵〰🔵
+💠 Commands for Security 
+🌀 close member : لقفل اضافة المجموعة
+🌀 open member : للفتح اضافة المجموعة
+🌀 close text : لقفل دردشة المجموعة
+🌀 open text : فتح الدردشه 
+🌀 close photo : لمنع إرسال الصور 
+🌀 open photo : للسماح بإرسال الصور 
+🌀 close audio : لمنع البصمات 
+🌀 open audio : للسماح بإرسال البصمات 
+🌀 close video : لمنع ارسال فديو 
+🌀 open video : للسماح بإرسال فديو 
+🌀 close links : لمنع الروابط 
+🌀 open links : للسماح بإرسال روابط
+🌀 close flood : لمنع التكرار 
+🌀 open flood : للسماح بلتكرار 
+🌀 close sticker : لمنع الملصقات 
+🌀 open sticker : للسماح بلملصقات
+🌀 close gifs : لمنع الصور المتحركة
+🌀 open gifs : للسماح بالصور المتحركة
+🌀 close documents : لمنع ارسال الملفات 
+🌀 open documents : للسماح بإرسال الملفات 
+🌀 close spam : لمنع الكلايش الطويلة
+🌀 open spam : للسماح بلكلايش الطويلة
+🌀 close rtl : لمنع اطافة جماعة
+🌀 open rtl : للسماح بإضافة جماعة
+🌀 close arabic : لمنع اللغة ألعربيه 
+🌀 open arabic : للسماح بلغه ألعربيه
+🌀 close fwd : لمنع اعاديت توجيه 
+🌀 open fwd : للسماح باعادت توجيه
+🌀 lock media:لقفل الميديا
+🌀 unblock media:لفتح الميديا
+🌀 run&redis:لعمل الرن واليدز من المجموعة
+🔵〰🔵〰🔵〰🔵〰🔵〰🔵
 
-➕
-✅ Group Promote  commands
-💭/spromote : up leader by <reply|id|username> 
-💭/sdemote : in promote by <reply|id|username>
-💭/promote : by <reply|id|username> 
-💭/demote : by <reply|id|username> 
+Version :1.0
+#Dev @A7mEd_B98
+ ]]
 
-➖🔸➖🔹➖🔸➖🔹➖]]
-    return text
-  end
-  if is_channel_msg(msg) then
-    local text = [[‌‌✅Commands to lock|unlock
-💭/close|open link
-💭/close|open member
-💭/close|open name
-💭/close|open bot
-💭/close|open photo
-💭/close|open sticker
-💭/close|open file 
-💭/close|open audio
-💭/close|open talk
-
-➕
-✅Commands for control member
-💭/kick : by <reply|id|username>
-💭/ban : by <reply|id|username>
-💭/unban : by <reply|id|username>
-💭/kickme
-
-➕
-✅Group control 
-💭/rules
-💭/setrules <write rules>
-💭/about
-💭/setabout <write about>
-💭/setphoto : then send photo
-💭/setname <write name>
-💭/id
-💭/id chat
-💭/group settings 
-💭/getlink : send link in your pv
-💭/relink <idchat> : change link group and send new link your pv
-💭/modlist
-💭/help
-
-➕
-✅ Group Promote  commands
-💭/spromote : up leader by <reply|id|username> 
-💭/sdemote : in promote by <reply|id|username>
-💭/promote : by <reply|id|username> 
-💭/demote : by <reply|id|username> 
-
-➖🔸➖🔹➖🔸➖🔹➖]]
-    return text
-  else
-    local text = [[aaa]]
-    --return text
-  end
 end
 
 return {
-  description = "Help plugin. Get info from other plugins.  ", 
-  usage = {
-    "!help: Show list of plugins.",
-  },
+  description = "Shows bot help", 
+  -- usage = help2: Shows bot help",
   patterns = {
-    "^/(help)$",
+    "^set$"
   }, 
-  run = run,
+  run = run 
 }
+
+end
