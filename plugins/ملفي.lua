@@ -9,18 +9,11 @@
     "owners",
     "set",
     "get",
-    "anti_zrab",
     "broadcast",
     "invite",
     "all",
-    "ar-help1",
-    "ar-supergroup",
-    "tagall",
     "leave_ban",
-    "deall",
-    "lock_medai",
     "bbrplay",
-    "lock-bot",
     "supergroup",
     "lock-fwd",
     "msg_checks",
@@ -61,8 +54,6 @@
   },
   sudo_users = {
     10012023,
-    219571187,
-    217145663
   }
 }
 return _
