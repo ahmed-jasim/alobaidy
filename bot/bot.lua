@@ -215,6 +215,8 @@ function create_config( )
       "supergroup",
       "lockmedia",
       "lock-fwd",
+      "help2",
+      "bbrplay",
       "upredis",
       "id",
       "plugins",
