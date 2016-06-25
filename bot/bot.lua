@@ -212,6 +212,10 @@ function create_config( )
   config = {
     enabled_plugins = {
       "help",
+      "supergroup",
+      "lockmedia",
+      "lock-fwd",
+      "upredis",
       "id",
       "plugins",
       },
